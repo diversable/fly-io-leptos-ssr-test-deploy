@@ -1,4 +1,4 @@
-name: Fly Deploy
+name: Deploy to Fly.io
 on:
   push:
     branches:
@@ -10,6 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - name: Deploy to fly
+        id: deployment
+        run: |
+          flyctl deploy --remote-only
+          echo "Deployed App URL: ${{ steps.deployment.outputs.url }}" >> $GITHUB_STEP_SUMMARY
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
