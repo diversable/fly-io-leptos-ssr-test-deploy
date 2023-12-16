@@ -13,7 +13,7 @@ jobs:
       - name: Deploy to fly
         id: deployment
         run: |
-          flyctl deploy --remote-only >> $GITHUB_STEP_SUMMARY
-          echo "Deployed App URL: ${{ steps.deployment.outputs.URL }}" >> $GITHUB_STEP_SUMMARY
+          flyctl deploy --remote-only
+          echo "Deployed App URL: ${{ steps.deployment.outputs }}" >> $GITHUB_STEP_SUMMARY
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
