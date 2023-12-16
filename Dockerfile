@@ -26,7 +26,7 @@ RUN cargo leptos build --release -vv
 
 FROM rustlang/rust:nightly-bullseye as runner
 
-# ---------------------------- update name ------------------------
+# -------------- NB: update binary name to match app name in Cargo.toml ------------------
 # Copy the server binary to the /app directory
 COPY --from=builder /app/target/release/fly-io-ssr-test-deploy /app/
 
@@ -43,6 +43,6 @@ ENV LEPTOS_SITE_ADDR="0.0.0.0:8080"
 ENV LEPTOS_SITE_ROOT="site"
 EXPOSE 8080
 
-# ---------------------------- update name ------------------------
+# -------------- NB: update binary name to match app name in Cargo.toml ------------------
 # Run the server
 CMD ["/app/fly-io-ssr-test-deploy"]
