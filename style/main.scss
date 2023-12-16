@@ -16,6 +16,7 @@ body {
 
 div {
 	display: flex;
+    flex-direction: column;
 	justify-content: space-around;
     align-items: center;
 }
@@ -24,8 +25,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-p {
-    margin: var(--size-2);
+p, button {
+    margin: var(--size-6);
 }
 
 body > picture, button, p {
