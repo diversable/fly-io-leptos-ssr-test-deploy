@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for fly-io-ssr-test-deploy-dark-water-6973-patient-firefly-2038 on 2023-12-15T16:26:36-08:00
+# fly.toml app configuration file generated for fly-io-ssr-test-deploy on 2023-12-15T16:53:32-08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "fly-io-ssr-test-deploy-dark-water-6973-patient-firefly-2038"
+app = "fly-io-ssr-test-deploy"
 primary_region = "sea"
 
 [build]
